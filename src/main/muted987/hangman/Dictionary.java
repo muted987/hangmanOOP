@@ -6,9 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Dictionary {
-
-    private ArrayList<String> words;
-
     public ArrayList<String> getWords(String language) {
         ArrayList<String> words = new ArrayList<>();
         try {
@@ -18,7 +15,7 @@ public class Dictionary {
                 words.add(line);
             }
         } catch (IOException ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
         return words;
     }
