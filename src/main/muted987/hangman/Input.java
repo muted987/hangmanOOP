@@ -32,6 +32,6 @@ public class Input {
     }
 
     public static boolean isInputValid(String inputText) {
-        return (inputText.length() == 1) || !("1234567890,!@#$%^&()_+|/\\<>.".contains(inputText));
+        return (inputText.length() == 1) && !("1234567890,!@#$%^&()_+|/\\<>.".contains(inputText));
     }
 }
