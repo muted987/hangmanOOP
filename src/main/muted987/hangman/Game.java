@@ -6,14 +6,14 @@ public class Game {
 
     private final String language = GameStart.start();
     private int amountOfInputs = 0;
-    private int mistakeCount = 0;
+    private int amountOfMistake = 0;
     private final Word word = new Word(language);
     private  final ArrayOfHiddenWord starsArray = new ArrayOfHiddenWord(word.getWord());
     private final ArrayList<String> arrayOfIncorrectLetters = new ArrayList<>();
     public void game() {
         HangmanRender hangmanRender = new HangmanRender();
         while (true) {
-            if (mistakeCount == 8) {
+            if (amountOfMistake == 8) {
                 System.out.println("GAME OVER");
                 endOfGame();
                 break;
@@ -23,29 +23,28 @@ public class Game {
                 endOfGame();
                 break;
             }
-            hangmanRender.render(mistakeCount);
+            hangmanRender.render(amountOfMistake);
             starsArray.hiddenWordArrayRender(starsArray);
             String letterInput = Input.inputLetter();
-            while (true) {
-                if (word.getIndexOfLetter(letterInput) != -1) {
-                    amountOfInputs++;
+            amountOfInputs++;
+            if (word.getIndexOfLetter(letterInput) != -1) {
+                while (word.getIndexOfLetter(letterInput) >= 0) {
                     starsArray.replaceStarToLetter(letterInput, word.getIndexOfLetter(letterInput));
                     word.replaceLetterToStar(word.getIndexOfLetter(letterInput));
-                } else {
-                    System.out.println("Incorrect letter");
-                    arrayOfIncorrectLetters.add(letterInput);
-                    mistakeCount++;
-                    break;
                 }
+            } else {
+            System.out.println("Incorrect letter");
+            arrayOfIncorrectLetters.add(letterInput);
+            amountOfMistake++;
+            break;
             }
-            amountOfInputs++;
         }
     }
 
     public void endOfGame() {
         System.out.println("word was = " + word);
-        System.out.println(arrayOfIncorrectLetters);
+        System.out.println("Incorrect letters = " + arrayOfIncorrectLetters);
         System.out.println("Amount of inputted letters = " + amountOfInputs);
-        System.out.println("Amount of mistake = " + amountOfInputs);
+        System.out.println("Amount of mistake = " + amountOfMistake);
     }
 }
