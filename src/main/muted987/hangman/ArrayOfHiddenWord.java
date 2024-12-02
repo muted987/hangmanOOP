@@ -23,7 +23,7 @@ public class ArrayOfHiddenWord {
     public void replaceStarToLetter(String letter, int index){
         stars.set(index, letter);
     }
-    public void starsArrayRender(ArrayOfHiddenWord stars) {
+    public void hiddenWordArrayRender(ArrayOfHiddenWord stars) {
         System.out.println(stars.getArrayOfHiddenWord());
     }
 }

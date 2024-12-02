@@ -24,7 +24,7 @@ public class Game {
                 break;
             }
             hangmanRender.render(mistakeCount);
-            starsArray.starsArrayRender(starsArray);
+            starsArray.hiddenWordArrayRender(starsArray);
             String letterInput = Input.inputLetter();
             while (true) {
                 if (word.getIndexOfLetter(letterInput) != -1) {
