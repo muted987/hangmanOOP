@@ -2,7 +2,7 @@ package main.muted987.hangman;
 
 public class GameStart {
 
-    private static String language = "English";
+    private static String language = "Russian";
 
 
     public static String start() {

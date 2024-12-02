@@ -1,4 +1,4 @@
-package main.muted987.hangman;
+package main.muted987.hangman.objects;
 
 import java.util.ArrayList;
 import java.util.List;
