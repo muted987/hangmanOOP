@@ -14,9 +14,9 @@ public class ArrayOfInputLetters {
 
     public void arrayOfInputLettersRender() {
         if (arrayOfInputLetters.size() != 0) {
-            System.out.println("Incorrect letters are " + arrayOfIncorrectLettersToString());
+            System.out.println("Inputted letters are " + arrayOfIncorrectLettersToString());
         } else {
-            System.out.println("There is no incorrect letters");
+            System.out.println("There is no inputted letters");
         }
     }
 

@@ -31,8 +31,8 @@ public class Game {
             starsArray.hiddenWordArrayRender(starsArray);
             String letterInput = Input.inputLetter();
             amountOfInputs++;
-            arrayOfInputLetters.addLetterToArray(letterInput);
-            if (word.getIndexOfLetter(letterInput) != -1 && arrayOfInputLetters.isLetterNotUsedBefore(letterInput)) {
+            if (arrayOfInputLetters.isLetterNotUsedBefore(letterInput)) arrayOfInputLetters.addLetterToArray(letterInput);
+            if (word.getIndexOfLetter(letterInput) != -1) {
                 while (word.getIndexOfLetter(letterInput) >= 0) {
                     starsArray.replaceStarToLetter(letterInput, word.getIndexOfLetter(letterInput));
                     word.replaceLetterToStar(word.getIndexOfLetter(letterInput));
