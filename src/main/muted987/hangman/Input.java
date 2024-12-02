@@ -12,7 +12,7 @@ public class Input {
             System.out.println("Input letter");
             String inputText = scanner.nextLine();
             if (isInputValid(inputText)) {
-                return inputText;
+                return inputText.toLowerCase();
             } else {
                 System.out.println("Input invalid. Try again");
             }
