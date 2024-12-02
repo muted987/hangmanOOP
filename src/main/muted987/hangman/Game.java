@@ -28,6 +28,7 @@ public class Game {
                 break;
             }
             hangmanRender.render(amountOfMistake);
+            arrayOfInputLetters.arrayOfInputLettersRender();
             starsArray.hiddenWordArrayRender(starsArray);
             String letterInput = Input.inputLetter();
             amountOfInputs++;
@@ -52,6 +53,7 @@ public class Game {
     public void endOfGame() {
         System.out.println("word was = " + word.wordRender());
         arrayOfIncorrectLetters.arrayOfIncorrectLettersRender();
+        System.out.println("--------------------------------------------");
         arrayOfInputLetters.arrayOfInputLettersRender();
         System.out.println("Amount of inputted letters = " + amountOfInputs);
         System.out.println("Amount of mistake = " + amountOfMistake);
