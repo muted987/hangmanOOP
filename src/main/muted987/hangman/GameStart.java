@@ -3,6 +3,7 @@ package main.muted987.hangman;
 public class GameStart {
     private static final String RUSSIAN_LANGUAGE_CAPTION = "Russian";
     private static final String ENGLISH_LANGUAGE_CAPTION = "English";
+    private static final String EXIT_CODE = "EXIT";
     private static final String GAME_EXIT_MESSAGE = "Shut down the game. Good luck!";
     private static String language = RUSSIAN_LANGUAGE_CAPTION;
     private static final String GAME_MAIN_MENU_CAPTION = "1. Start new game (current language is %s)\n2. Change game language (default Russian)\n3. Exit\n";
@@ -24,7 +25,7 @@ public class GameStart {
                 }
             } else {
                 System.out.println(GAME_EXIT_MESSAGE);
-                System.exit(1);
+                return EXIT_CODE;
             }
         }
     }
