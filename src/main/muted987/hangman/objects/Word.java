@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Random;
 
 public class Word {
-
     private final List<String> word;
     private final String hiddenWord;
     public Word(String language) {
@@ -23,19 +22,15 @@ public class Word {
         }
         hiddenWord = tempString.toString();
     }
-
     public List<String> getWord() {
         return word;
     }
-
     public void replaceLetterToStar(int index){
         word.set(index, "*");
     }
-
     public String wordRender(){
         return hiddenWord;
     }
-
     public int getIndexOfLetter(String letter) {
         return word.indexOf(letter);
     }

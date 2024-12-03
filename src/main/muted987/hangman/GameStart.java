@@ -1,10 +1,7 @@
 package main.muted987.hangman;
 
 public class GameStart {
-
     private static String language = "Russian";
-
-
     public static String start() {
         while (true) {
             String gameStartMessage = "1. Start new game (current language is %s)\n2. Change game language (default Russian)\n3. Exit\n";

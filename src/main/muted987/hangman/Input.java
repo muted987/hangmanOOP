@@ -3,10 +3,7 @@ package main.muted987.hangman;
 import java.util.Scanner;
 
 public class Input {
-
     private static final Scanner scanner = new Scanner(System.in);
-
-
     public static String inputLetter() {
         while (true) {
             System.out.println("Input letter");
@@ -18,7 +15,6 @@ public class Input {
             }
         }
     }
-
     public static int inputOption() {
         while (true) {
             System.out.println("Input option");
@@ -30,7 +26,6 @@ public class Input {
             }
         }
     }
-
     public static boolean isInputValid(String inputText) {
         return (inputText.length() == 1) && !("1234567890,!@#$%^&()_+|/\\<>.".contains(inputText));
     }

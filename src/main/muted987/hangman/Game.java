@@ -32,14 +32,14 @@ public class Game {
             starsArray.hiddenWordArrayRender(starsArray);
             String letterInput = Input.inputLetter();
             amountOfInputs++;
-            if (arrayOfInputLetters.isLetterNotUsedBefore(letterInput)) arrayOfInputLetters.addLetterToArray(letterInput);
+            if (arrayOfInputLetters.isLetterNotInArray(letterInput)) arrayOfInputLetters.addLetterToArray(letterInput);
             if (word.getIndexOfLetter(letterInput) != -1) {
                 while (word.getIndexOfLetter(letterInput) >= 0) {
                     starsArray.replaceStarToLetter(letterInput, word.getIndexOfLetter(letterInput));
                     word.replaceLetterToStar(word.getIndexOfLetter(letterInput));
                 }
             } else {
-                if (arrayOfIncorrectLetters.letterNotInMistakeArray(letterInput)) {
+                if (arrayOfIncorrectLetters.isLetterNotInArray(letterInput)) {
                     System.out.println("Incorrect letter");
                     arrayOfIncorrectLetters.addLetterToArray(letterInput);
                 } else {
@@ -49,7 +49,6 @@ public class Game {
             }
         }
     }
-
     public void endOfGame() {
         System.out.println("word was = " + word.wordRender());
         arrayOfIncorrectLetters.arrayOfIncorrectLettersRender();

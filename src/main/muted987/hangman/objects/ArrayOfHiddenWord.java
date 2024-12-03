@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArrayOfHiddenWord {
-
     private final ArrayList<String> stars;
-
     public ArrayOfHiddenWord(List<String> word) {
         ArrayList<String> result = new ArrayList<>();
         for (int i = 0; i <= word.size() - 1; i++) {
