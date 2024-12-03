@@ -8,4 +8,14 @@ public class ArrayOfIncorrectLetters extends ArrayOfLetters{
             System.out.println("There is no incorrect letters");
         }
     }
+
+    @Override
+    public void addLetterToArray(String letter) {
+        if (isLetterNotInArray(letter)) {
+            System.out.println("Incorrect letter");
+            this.arrayOfLetters.add(letter);
+        } else {
+            System.out.println("Letter is used before");
+        }
+    }
 }
