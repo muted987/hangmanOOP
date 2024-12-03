@@ -18,9 +18,15 @@ public class Input {
     public static int inputOption() {
         while (true) {
             System.out.println("Input option");
-            int inputOption = Character.getNumericValue(scanner.nextLine().charAt(0));
-            if (!(inputOption > 4 || inputOption < 0)) {
-                return inputOption;
+            String inputOption = scanner.nextLine();
+            if (inputOption.length() == 1) {
+                int option = Character.getNumericValue(inputOption.charAt(0));
+                if (!(option > 3 || option <= 0)) {
+                    return option;
+                }
+                else {
+                    System.out.println("Input invalid. Try again");
+                }
             } else {
                 System.out.println("Input invalid. Try again");
             }
